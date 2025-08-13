@@ -3,6 +3,15 @@
     import { Globe, ShieldCheck, Users } from 'lucide-svelte';
     import CountUp from './reusable/CountUp.svelte';
     import lighthousereport from '$lib/assets/lighthouse.png'
+    import Footer from './Sections/footer.svelte';
+
+    const scrollToId = (id: string) => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
 </script>
 
 <div class="relative min-h-screen w-full">
@@ -26,10 +35,10 @@
       </div>
 
       <nav class="flex items-center gap-6">
-        <p>Packages</p>
-        <p>About</p>
-        <p>Demo</p>
-        <p>Pricing</p>
+        <p on:click={() => scrollToId('packages')}>Packages</p>
+        <a href="#results">About</a>
+        <p on:click={() => scrollToId('demo')}>Demo</p>
+        <p on:click={() => scrollToId('pricing')}>Pricing</p>
         <button class="bg-[#1D2939] text-white px-5 py-3 rounded-full">Contact Us</button>
         <button class="bg-gray-200 text-black px-5 py-3 rounded-full -ml-2">Request a Demo</button>
       </nav>
@@ -48,7 +57,8 @@
         <p class="mt-4 text-gray-700 max-w-xl">
           Scale your E-commerce platform with ease. Say no to hassle and let us handle the rest.
         </p>
-        <button class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all">Get Started</button>
+        <button on:click={() => scrollToId('info')} class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all">Get Started</button>
+
       </div>
 
         <!-- Right: Mock window -->
@@ -165,7 +175,7 @@
     <h1 class="text-3xl mt-2">100+ Brands Scaled</h1>
   </div>
 
-  <div class="h-screen relative z-10 w-full bg-gray-50">
+  <div id="info" class="h-screen relative z-10 w-full bg-gray-50">
     <div class="mx-auto max-w-7xl h-full px-6 relative z-10">
         <div class="margin w-full relative z-10 grid grid-cols-1 lg:grid-cols-1 items-center gap-12 text-black flex-col justify-center h-full">
           <div class="flex flex-col items-center gap-10 w-full">
@@ -195,7 +205,7 @@
 
 
   <!-- ResultsSection.svelte -->
-<section class="bg-white py-20 relative z-20">
+<section id="results" class="bg-white py-20 relative z-20">
   <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
     <!-- Text -->
     <div>
@@ -278,4 +288,54 @@
   </div>
 </section>
 
+  <div class="h-[75vh] relative z-10 w-full bg-gray-50">
+    <div class="mx-auto max-w-7xl h-full px-6 relative z-10">
+      <div class="margin w-full relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center gap-12 text-black flex-col justify-center h-full">
+        <div class="contact-info flex flex-col gap-5 justify-between h-[85%]">
+
+          <div class="top flex flex-col gap-2">
+            <h1 class="text-6xl font-medium">Contact Us</h1>
+            <p>Send us a message! We're always here to help, our sales team will get back to you as soon as possible.</p>
+          </div>
+          <div class="middle flex flex-col gap-5">
+            <div class="flex">
+              <i class="fas fa-phone"></i>
+              <p>(773) 706-1447</p>
+            </div>
+            <div class="flex">
+              <i class="fas fa-envelope"></i>
+              <p>contact@scalableweb.solutions</p>
+            </div>
+            <div class="flex">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>Global</p>
+            </div>
+          </div>
+          <div class="bottom flex flex-col gap-5">
+            <h1 class="text-3xl font-medium">Follow Us</h1>
+            <div class="flex items-center gap-5">
+              <p class="fab fa-facebook-f">Facebook</p>
+              <p class="fab fa-twitter">Twitter</p>
+              <p class="fab fa-instagram">Instagram</p>
+              <p class="fab fa-linkedin-in">LinkedIn</p>
+            </div>
+          </div>
+        </div>
+        <div class="form flex flex-col gap-5 bg-gray-100 h-[85%] p-5 rounded-xl">
+          <h1 class="p-5 text-3xl font-medium">Send us a message!</h1>
+          <input class="p-5 focus:outline-none" placeholder="Name" type="text" />
+          <div class="bottomborder absolute bg-black h-[0.5px] z-20 w-[200px] top-[220px] ml-5"></div>
+          <input class="p-5 focus:outline-none" placeholder="Email" type="text" />
+          <div class="bottomborder absolute bg-black h-[0.5px] z-20 w-[200px] top-[300px] ml-5"></div>
+          <input class="p-5 focus:outline-none" placeholder="Phone" type="text" />
+          <div class="bottomborder absolute bg-black h-[0.5px] z-20 w-[150px] top-[380px] ml-5"></div>
+          <input class="p-5 focus:outline-none" placeholder="Message" type="text" />
+          <button class="bg-gray-800 text-white px-4 py-4 rounded-full">Send Message</button>
+          <div class="bottomborder absolute bg-black h-[0.5px] z-20 w-[400px] top-[460px] ml-5"></div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <Footer/>
 </div>
