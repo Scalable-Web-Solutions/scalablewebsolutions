@@ -67,10 +67,9 @@
         <div class="bottom flex flex-col gap-4">
           <h1 class="text-2xl md:text-3xl font-medium">Follow Us</h1>
           <div class="flex flex-wrap items-center gap-5">
-            <p class="fab fa-facebook-f">Facebook</p>
-            <p class="fab fa-twitter">Twitter</p>
-            <p class="fab fa-instagram">Instagram</p>
-            <p class="fab fa-linkedin-in">LinkedIn</p>
+            <a class="fab fa-facebook-f">Facebook</a>
+            <a class="fab fa-twitter">Twitter</a>
+            <a class="fab fa-linkedin-in">LinkedIn</a>
           </div>
         </div>
       </div>
