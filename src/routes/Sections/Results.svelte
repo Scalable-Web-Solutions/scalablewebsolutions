@@ -9,7 +9,7 @@ import lighthousereport from '$lib/assets/lighthouse.png'
       <h1 class="text-5xl font-semibold mb-6">
         Let the results speak for themselves.
       </h1>
-      <h2 class="text-3xl font-medium mb-4">
+      <h2 class="text-[28px] font-medium mb-4">
         Speed, Responsiveness, and SEO.
       </h2>
       <p class="text-lg text-gray-700 leading-relaxed">
