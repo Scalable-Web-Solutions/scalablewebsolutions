@@ -2,7 +2,7 @@
     import CountUp from "../reusable/CountUp.svelte";
     import { scrollToId } from "../reusable/functions";
 </script>
-<section class="relative z-20 w-full min-h-screen flex items-center mt-10">
+<section class="relative z-20 w-full min-h-screen flex items-center md:mt-5 mt-20 pb-5">
     <div class="mx-auto max-w-7xl px-6">
     <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
       <!-- Left: Copy -->
