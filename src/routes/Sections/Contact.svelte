@@ -1,4 +1,4 @@
-<div class="min-h-[45vh] md:h-[75vh] relative z-10 w-full bg-gray-50 py-10 md:py-0 flex items-center justify-center">
+<div id='contact' class="min-h-[45vh] md:h-[75vh] relative z-10 w-full bg-gray-50 py-10 md:py-0 flex items-center justify-center">
   <div class="mx-auto max-w-7xl w-full px-6 flex justify-center">
     
     <!-- Contact Info -->

@@ -2,7 +2,7 @@
   import { Globe, ShieldCheck, Users } from "lucide-svelte";
 </script>
 
-<section id="info" class="relative z-10 w-full bg-gray-50 py-16 md:py-24">
+<section id="about" class="relative z-10 w-full bg-gray-50 py-16 md:py-24">
   <div class="mx-auto max-w-7xl px-6">
     <div class="grid grid-cols-1 items-center gap-12 text-black">
       <div class="flex flex-col items-center gap-10 w-full">

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import logo from '$lib/assets/scalablewebsolutions.png'
     import { Globe, ShieldCheck, Users } from 'lucide-svelte';
     import CountUp from './reusable/CountUp.svelte';
     import lighthousereport from '$lib/assets/lighthouse.png'
@@ -24,8 +23,6 @@
     <div class="absolute z-[1] left-[-160px] bottom-[12%] w-[520px] h-[520px] bg-fuchsia-300/30 blur-[120px] rounded-full"></div>
   <div class="absolute z-[1] right-[15%] top-[-120px] w-[420px] h-[420px] bg-purple-300/25 blur-[110px] rounded-full"></div>
   </div>
-  <!-- Header -->
-  <Navbar logo={logo} />
 
 
   <!-- Hero -->

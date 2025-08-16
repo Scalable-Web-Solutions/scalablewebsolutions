@@ -7,7 +7,7 @@
   function scrollToId(id: string) {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    open = false; // close mobile menu after clicking
+    open = false;
   }
 </script>
 
@@ -21,10 +21,11 @@
 
     <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-6">
-      <p on:click={() => scrollToId('packages')}>Packages</p>
-      <a href="#results">About</a>
+      <a on:click={() => scrollToId('about')}>About</a>
+      <a on:click={() => scrollToId('results')}>Results</a>
       <p on:click={() => scrollToId('demo')}>Demo</p>
-      <p on:click={() => scrollToId('pricing')}>Pricing</p>
+      <a href="/pricing">Pricing</a>
+
       <button class="bg-[#1D2939] text-white px-5 py-3 rounded-full">Contact Us</button>
       <button class="bg-gray-200 text-black px-5 py-3 rounded-full -ml-2">Request a Demo</button>
     </nav>
@@ -51,7 +52,7 @@
   >
     <div class="mx-auto max-w-7xl px-6 pb-6">
       <div class="flex flex-col gap-4 bg-white/80 backdrop-blur rounded-2xl p-5 shadow-sm border border-gray-200">
-        <button class="text-left" on:click={() => scrollToId('packages')}>Packages</button>
+        <button class="text-left" on:click={() => scrollToId('packages')}>Results</button>
         <a class="text-left" href="#results" on:click={() => (open = false)}>About</a>
         <button class="text-left" on:click={() => scrollToId('demo')}>Demo</button>
         <button class="text-left" on:click={() => scrollToId('pricing')}>Pricing</button>
