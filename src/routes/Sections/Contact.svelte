@@ -1,6 +1,23 @@
+<script lang="ts">
+  import { Experiment } from "sws-parallel-render-engine";
+  
+  import ContactOne from "../reusable/ContactOne.svelte";
+  import ContactTwo from "../reusable/ContactTwo.svelte";
+  const { experiments } = $props<{ experiments: Record<string, string> }>();
+</script>
+
 <div id='contact' class="min-h-[45vh] md:h-[75vh] relative z-10 w-full bg-gray-50 py-10 md:py-0 flex items-center justify-center">
   <div class="mx-auto max-w-7xl w-full px-6 flex justify-center">
-    
+    <!-- <Experiment id="landing_hero_v1" current={experiments.landing_hero_v1} let:current>
+      {#if current === 'alt'}
+        <ContactTwo/>
+      {:else}
+        <ContactOne/>
+      {/if}
+
+    </Experiment> -->
+
+
     <!-- Contact Info -->
     <div class="contact-info flex flex-col gap-5 justify-between max-w-lg w-full text-left">
       <div class="top flex flex-col gap-2">
