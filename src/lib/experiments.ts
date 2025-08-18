@@ -6,7 +6,7 @@ export const experiments: ExperimentsConfig = {
     id: 'landing_hero_v1',
     variants: ['control', 'ContactOne', 'ContactTwo'],
 
-    // weight: [0.5, 0.25, 0.25], // optional
+    weight: [0.80, 0.10, 0.10], // optional
     botVariant: 'control',
     enabled: true
   },

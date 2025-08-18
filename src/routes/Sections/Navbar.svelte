@@ -23,7 +23,7 @@
     <nav class="hidden md:flex items-center gap-6">
       <a on:click={() => scrollToId('about')}>About</a>
       <a on:click={() => scrollToId('results')}>Results</a>
-      <p on:click={() => scrollToId('demo')}>Demo</p>
+      <p on:click={() => scrollToId('contact')}>Demo</p>
       <a href="/pricing">Pricing</a>
 
       <button class="bg-[#1D2939] text-white px-5 py-3 rounded-full">Contact Us</button>

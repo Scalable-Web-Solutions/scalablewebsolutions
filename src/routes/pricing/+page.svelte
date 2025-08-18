@@ -1,8 +1,8 @@
 <script lang="ts">
   import { Check, ArrowRight, Sparkles } from 'lucide-svelte';
 
-  type Billing = 'project' | 'monthly';
-  let billing: Billing = 'project';
+  type Billing = 'monthly' | 'anually';
+  let billing: Billing = 'anually';
 
   const plans = [
     {
@@ -10,7 +10,7 @@
       badge: '',
       highlight: false,
       description: 'Best for new stores validating product–market fit.',
-      prices: { project: 299, monthly: 199 },
+      prices: { monthly: 3000, anually: 28000 },
       cta: 'Get Started',
       features: [
         'Core site audit & fixes',
@@ -23,7 +23,7 @@
       badge: 'Most popular',
       highlight: true,
       description: 'For brands ready to scale conversions.',
-      prices: { project: 599, monthly: 399 },
+      prices: { monthly: 5000, anually: 48000 },
       cta: 'Get Started',
       features: [
         'Everything in Starter',
@@ -37,7 +37,7 @@
       badge: '',
       highlight: false,
       description: 'Custom growth program for high-volume stores.',
-      prices: { project: null, monthly: null }, // custom
+      prices: { monthly: null, anually: null }, // custom
       cta: 'Request a Quote',
       features: [
         'Everything in Growth',
@@ -75,16 +75,16 @@
         <button
           class="rounded-full px-4 py-2 text-sm font-medium transition
                  data-[active=true]:bg-[#1D2939] data-[active=true]:text-white"
-          data-active={billing === 'project'}
-          on:click={() => (billing = 'project')}>
+          data-active={billing === 'monthly'}
+          on:click={() => (billing = 'monthly')}>
           Per project
         </button>
         <button
           class="rounded-full px-4 py-2 text-sm font-medium transition
                  data-[active=true]:bg-[#1D2939] data-[active=true]:text-white"
-          data-active={billing === 'monthly'}
-          on:click={() => (billing = 'monthly')}>
-          Monthly
+          data-active={billing === 'anually'}
+          on:click={() => (billing = 'anually')}>
+          Anually
         </button>
       </div>
     </section>
@@ -129,7 +129,7 @@
               <span class="text-gray-500">
                 {plan.prices[billing] === null
                   ? ''
-                  : billing === 'project' ? 'per project' : 'per month'}
+                  : billing === 'monthly' ? 'per month' : 'per year'}
               </span>
             </div>
 
