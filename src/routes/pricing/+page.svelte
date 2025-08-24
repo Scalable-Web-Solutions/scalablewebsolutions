@@ -64,7 +64,7 @@
     <!-- Hero -->
     <section class="text-center">
       <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
-        Simple, transparent <span class="text-[#514BB2]">pricing</span>
+        Simple, transparent <span class="text-indigo-600">pricing</span>
       </h1>
       <p class="mx-auto mt-4 max-w-2xl text-gray-600 text-lg">
         Every plan includes a site audit, custom design, and expert guidance—no hidden fees.
@@ -113,7 +113,7 @@
             <div class="flex items-center justify-between">
               <h3 class="text-xl font-semibold">{plan.name}</h3>
               {#if plan.badge}
-                <span class="rounded-full bg-[#514BB2] px-3 py-1 text-xs font-medium text-white shadow-sm">
+                <span class="rounded-full bg-indigo-600 px-3 py-1 text-xs font-medium text-white shadow-sm">
                   {plan.badge}
                 </span>
               {/if}
@@ -170,8 +170,8 @@
     <!-- Tiny FAQ (minimal, optional) -->
     <section class="mt-14 grid gap-4 md:max-w-3xl md:mx-auto">
       <details class="group rounded-2xl border border-gray-200 bg-white/80 p-5">
-        <summary class="cursor-pointer list-none font-medium">What does “per project” include?</summary>
-        <p class="mt-3 text-gray-600">One scoped engagement covering audit, design, and implementation for a single store or site.</p>
+        <summary class="cursor-pointer list-none font-medium">What is the main difference between each package?</summary>
+        <p class="mt-3 text-gray-600">Each package caters to different needs, if you are unsure which one is right for you a 10 minute call with our team can clarify any confusion.</p>
       </details>
       <details class="group rounded-2xl border border-gray-200 bg-white/80 p-5">
         <summary class="cursor-pointer list-none font-medium">Can I upgrade later?</summary>

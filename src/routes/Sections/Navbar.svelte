@@ -14,7 +14,7 @@
 <header class="z-50 fixed top-0 left-0 right-0 bg-gradient-to-b from-black/15 to-transparent overflow-x-hidden">
   <div class="mx-auto max-w-7xl px-4 md:px-6 py-6 flex items-center justify-between">
     <!-- Logo/Title -->
-    <div class="flex items-center gap-3 min-w-0">
+    <div on:click={()=> window.location.href = '/'} class="flex items-center gap-3 min-w-0">
       <img src={logo} class="w-10 h-10 rounded-lg flex-shrink-0" alt="" />
       <h1 class="text-3xl md:text-5xl truncate">Scalable</h1>
     </div>

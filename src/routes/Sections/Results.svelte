@@ -61,25 +61,22 @@ import lighthousereport from '$lib/assets/lighthouse.png'
     <!-- Text -->
     <div>
       <h1 class="text-5xl font-semibold mb-6">
-        Let the results speak for themselves.
+          Integrated A/B Testing
       </h1>
       <h2 class="text-3xl font-medium mb-4">
-        Speed, Responsiveness, and SEO.
+        Custom analytics tailored to your business.
       </h2>
       <p class="text-lg text-gray-700 leading-relaxed">
-        Our client was struggling with slow loading times, unresponsive website,
-        and low search engine rankings. We helped them improve their website's speed
-        by <span class="font-semibold text-indigo-600 text-xl">150%</span>, responsiveness,
-        and SEO, and also increased their security practice score by 22%.
+        Get a custom dashboard made for your site with A/B or A/B/C/D testing! Detailed insights and sales tracking with integrated CRM.
       </p>
     </div>
 
     <!-- Image -->
     <div class="flex justify-center">
       <img
-        src={lighthousereport}
+        src="https://i.imgur.com/5y2UMC1.png"
         alt="Lighthouse Report"
-        class="w-full max-w-md rounded-lg shadow-lg"
+        class="w-full max-w-md rounded-lg shadow-lg scale-120"
       />
     </div>
   </div>
