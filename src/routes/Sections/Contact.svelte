@@ -45,7 +45,7 @@
           <p class="fab fa-instagram">Instagram</p>
           <p class="fab fa-linkedin-in">LinkedIn</p>
         </div>
-        <a  href="mailto:contact@scalableweb.solutions" class="bg-gray-800 text-white px-6 py-4 rounded-full text-center">Contact via Email</a>
+        <a data-cta="contact_email" target="_blank" href="mailto:contact@scalableweb.solutions" class="bg-gray-800 text-white px-6 py-4 rounded-full text-center">Contact via Email</a>
 
       </div>
     </div>

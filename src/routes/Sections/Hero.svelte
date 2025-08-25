@@ -8,12 +8,12 @@
       <!-- Left: Copy -->
       <div>
         <h2 class="text-4xl md:text-5xl font-medium leading-tight">
-          We <span class="text-indigo-600 font-semibold">Audit, fix, and convert,</span> so you don't have to.
+          We <span class="text-indigo-600 font-semibold">boost growth,</span> so you don't have to.
         </h2>
         <p class="mt-4 text-gray-700 max-w-xl">
           Scale your E-commerce platform with ease. Say no to hassle and let us handle the rest.
         </p>
-        <button on:click={() => scrollToId('info')} class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all">Get Started</button>
+        <button data-cta="hero_get_started" on:click={() => scrollToId('about')} class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all">Get Started</button>
 
       </div>
 

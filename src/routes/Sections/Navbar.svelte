@@ -26,8 +26,11 @@
       <p on:click={() => scrollToId('contact')}>Demo</p>
       <a href="/pricing">Pricing</a>
 
-      <button class="bg-[#1D2939] text-white px-5 py-3 rounded-full">Contact Us</button>
-      <button class="bg-gray-200 text-black px-5 py-3 rounded-full -ml-2">Request a Demo</button>
+      <button on:click={() => scrollToId('contact')} data-cta="navbar_contact_us" class="bg-[#1D2939] text-white px-5 py-3 rounded-full">Contact Us</button>
+
+      <button on:click={() => scrollToId('contact')} data-cta="navbar_request_demo" class="bg-gray-200 text-black px-5 py-3 rounded-full -ml-2">Request a Demo</button>
+
+
     </nav>
 
     <!-- Mobile hamburger -->

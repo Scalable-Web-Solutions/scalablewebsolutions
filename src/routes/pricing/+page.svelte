@@ -12,6 +12,7 @@
       description: 'Best for new stores validating product–market fit.',
       prices: { monthly: 3000, anually: 28000 },
       cta: 'Get Started',
+      datacta: 'starter_pkg',
       features: [
         'Core site audit & fixes',
         'Custom Shopify theme',
@@ -25,6 +26,7 @@
       description: 'For brands ready to scale conversions.',
       prices: { monthly: 5000, anually: 48000 },
       cta: 'Get Started',
+      datacta: 'growth_pkg',
       features: [
         'Everything in Starter',
         'Speed & responsiveness boost',
@@ -37,8 +39,9 @@
       badge: '',
       highlight: false,
       description: 'Custom growth program for high-volume stores.',
-      prices: { monthly: null, anually: null }, // custom
+      prices: { monthly: null, anually: null },
       cta: 'Request a Quote',
+      datacta: 'scale_pkg',
       features: [
         'Everything in Growth',
         'Ongoing A/B testing',
@@ -77,7 +80,7 @@
                  data-[active=true]:bg-[#1D2939] data-[active=true]:text-white"
           data-active={billing === 'monthly'}
           on:click={() => (billing = 'monthly')}>
-          Per project
+          Monthly
         </button>
         <button
           class="rounded-full px-4 py-2 text-sm font-medium transition
@@ -91,7 +94,7 @@
 
     <!-- Trust mini-bar -->
     <section class="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
-      <span class="inline-flex items-center gap-2"><Sparkles class="h-4 w-4" /> 7-day average turnaround</span>
+      <span class="inline-flex items-center gap-2"><Sparkles class="h-4 w-4" /> 14-day average turnaround</span>
       <span class="h-1 w-1 rounded-full bg-gray-300"></span>
       <span>No long-term contracts</span>
       <span class="h-1 w-1 rounded-full bg-gray-300"></span>
@@ -145,7 +148,9 @@
 
             <!-- CTA -->
             <a
-              href="/contact"
+              href="mailto:contact@scalablewebsolutions.com"
+              data-cta={plan.datacta}
+
               class={`mt-8 inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 font-medium transition
                       ${plan.highlight
                         ? 'bg-[#1D2939] text-white hover:bg-[#0F172A]'
