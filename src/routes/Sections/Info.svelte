@@ -12,7 +12,7 @@
 
         <!-- Features -->
         <div class="grid w-full grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="flex flex-col gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+          <div class="flex flex-col gap-4 p-6">
             <ShieldCheck class="w-10 h-10 text-indigo-600" />
             <h2 class="text-2xl font-semibold">Advanced Scaling</h2>
             <p class="text-base sm:text-lg text-gray-700">
@@ -21,7 +21,7 @@
             </p>
           </div>
 
-          <div class="flex flex-col gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+          <div class="flex flex-col gap-4 rounded-2xl p-6">
             <Globe class="w-10 h-10 text-indigo-600" />
             <h2 class="text-2xl font-semibold">Global Solutions</h2>
             <p class="text-base sm:text-lg text-gray-700">
@@ -31,7 +31,7 @@
             </p>
           </div>
 
-          <div class="flex flex-col gap-4 bg-white rounded-2xl p-6 shadow-sm border border-gray-200">
+          <div class="flex flex-col gap-4 rounded-2xl p-6">
             <Users class="w-10 h-10 text-indigo-600" />
             <h2 class="text-2xl font-semibold">1-on-1 Support</h2>
             <p class="text-base sm:text-lg text-gray-700">

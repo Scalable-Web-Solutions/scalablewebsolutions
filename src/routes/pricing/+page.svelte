@@ -6,32 +6,18 @@
 
   const plans = [
     {
-      name: 'Starter',
-      badge: '',
-      highlight: false,
-      description: 'Best for new stores validating product–market fit.',
-      prices: { monthly: 3000, anually: 28000 },
-      cta: 'Get Started',
-      datacta: 'starter_pkg',
-      features: [
-        'Core site audit & fixes',
-        'Custom Shopify theme',
-        'Basic SEO + analytics setup'
-      ]
-    },
-    {
-      name: 'Growth',
+      name: 'Premium',
       badge: 'Most popular',
       highlight: true,
-      description: 'For brands ready to scale conversions.',
-      prices: { monthly: 5000, anually: 48000 },
+      description: 'For brands ready to scale & optimize conversions.',
+      prices: { monthly: 5000, anually: 50000 },
       cta: 'Get Started',
-      datacta: 'growth_pkg',
+      datacta: 'premium_pkg',
       features: [
-        'Everything in Starter',
+        'Ongoing A/B testing',
         'Speed & responsiveness boost',
         'Conversion optimisation',
-        '1-on-1 strategy session'
+        'Basic analytics dashboard'
       ]
     },
     {
@@ -44,7 +30,7 @@
       datacta: 'scale_pkg',
       features: [
         'Everything in Growth',
-        'Ongoing A/B testing',
+        'Ongoing A/B/C/D testing',
         'Advanced analytics dashboard',
         'Priority support'
       ]
@@ -102,7 +88,7 @@
     </section>
 
     <!-- Pricing grid -->
-    <section class="mt-12 grid gap-8 md:grid-cols-3">
+    <section class="mt-12 grid gap-8 md:grid-cols-2">
       {#each plans as plan}
         <article
           class={`group relative rounded-3xl p-[1px] ${

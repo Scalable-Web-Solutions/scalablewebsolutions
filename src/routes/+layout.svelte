@@ -14,7 +14,7 @@
 
 <script lang="ts">
 	import '../app.css';
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/favicon.ico';
     import Navbar from './Sections/Navbar.svelte';
 	import logo from '$lib/assets/scalablewebsolutions.png'
     import { onMount, setContext } from 'svelte';

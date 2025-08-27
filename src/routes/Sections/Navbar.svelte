@@ -28,7 +28,7 @@
 
       <button on:click={() => scrollToId('contact')} data-cta="navbar_contact_us" class="bg-[#1D2939] text-white px-5 py-3 rounded-full">Contact Us</button>
 
-      <button on:click={() => scrollToId('contact')} data-cta="navbar_request_demo" class="bg-gray-200 text-black px-5 py-3 rounded-full -ml-2">Request a Demo</button>
+      <button on:click={() => scrollToId('contact')} data-cta="navbar_request_demo" class="bg-gray-200 text-black px-5 py-3 rounded-full -ml-2 shadow-sm">Request a Demo</button>
 
 
     </nav>
