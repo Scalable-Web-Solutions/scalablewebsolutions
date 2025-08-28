@@ -76,7 +76,7 @@ import lighthousereport from '$lib/assets/lighthouse.png'
       <img
         src="https://i.imgur.com/5y2UMC1.png"
         alt="Lighthouse Report"
-        class="w-full max-w-md rounded-lg shadow-lg scale-120"
+        class="w-full max-w-md rounded-lg shadow-lg scale-100 lg:scale-120"
       />
     </div>
   </div>

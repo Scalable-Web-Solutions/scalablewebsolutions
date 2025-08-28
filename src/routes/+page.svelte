@@ -21,12 +21,11 @@
   <Hero/>
 
   <div class="brandshelped relative z-10 w-full h-[100px] bg-white flex items-center justify-center">
-    <h1 class="text-3xl mt-2">100+ Brands Scaled</h1>
+    <h1 class="text-3xl mt-2">10+ Brands Scaled</h1>
   </div>
 
   <Info/>
   <Results/>
   <Contact experiments={data.experiments}/>
-
   <Footer/>
 </div>
