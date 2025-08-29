@@ -5,6 +5,8 @@
     import Results from './Sections/Results.svelte';
     import Contact from './Sections/Contact.svelte';
 
+    import kaytee from '$lib/assets/kaytee.jpg'
+
     const { data } = $props<{
       data: { experiments: Record<string, string>; anonId?: string }
     }>();
@@ -20,12 +22,18 @@
   </div>
   <Hero/>
 
-  <div class="brandshelped relative z-10 w-full h-[100px] bg-white flex items-center justify-center">
-    <h1 class="text-3xl mt-2">10+ Brands Scaled</h1>
+  <div class="brandshelped relative z-10 w-full h-[140px] bg-white flex items-center justify-center flex-col">
+    <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+    <!-- svelte-ignore event_directive_deprecated -->
+    <div class="flex items-center gap-2">
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+      <img on:click={() => window.open('https://upcontenthu.netlify.app', '_blank')} src={kaytee} alt="" class="w-[80px] h-[80px] rounded-md">
+    </div>
   </div>
 
   <Info/>
   <Results/>
-  <Contact experiments={data.experiments}/>
+  <Contact/>
   <Footer/>
 </div>

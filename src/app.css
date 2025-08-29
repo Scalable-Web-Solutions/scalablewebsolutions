@@ -8,6 +8,14 @@
     font-style: normal;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
 @layer base{
     body{
         font-family: 'Poppins', sans-serif;

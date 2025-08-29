@@ -6,35 +6,20 @@
 
   const plans = [
     {
-      name: 'Premium',
+      name: 'RPV Growth',
       badge: 'Most popular',
       highlight: true,
       description: 'For brands ready to scale & optimize conversions.',
-      prices: { monthly: 5000, anually: 50000 },
+      prices: { monthly: 5000, anually: 4170 },
       cta: 'Get Started',
       datacta: 'premium_pkg',
       features: [
-        'Ongoing A/B testing',
+        'Weekly A/B testing',
         'Speed & responsiveness boost',
         'Conversion optimisation',
         'Basic analytics dashboard'
       ]
     },
-    {
-      name: 'Scale',
-      badge: '',
-      highlight: false,
-      description: 'Custom growth program for high-volume stores.',
-      prices: { monthly: null, anually: null },
-      cta: 'Request a Quote',
-      datacta: 'scale_pkg',
-      features: [
-        'Everything in Growth',
-        'Ongoing A/B/C/D testing',
-        'Advanced analytics dashboard',
-        'Priority support'
-      ]
-    }
   ];
 
   const fmt = (n: number | null) => (n === null ? 'Custom' : `$${n.toLocaleString()}`);
@@ -88,7 +73,7 @@
     </section>
 
     <!-- Pricing grid -->
-    <section class="mt-12 grid gap-8 md:grid-cols-2">
+    <section class="mt-12 grid gap-8 md:grid-cols-1">
       {#each plans as plan}
         <article
           class={`group relative rounded-3xl p-[1px] ${
@@ -118,7 +103,7 @@
               <span class="text-gray-500">
                 {plan.prices[billing] === null
                   ? ''
-                  : billing === 'monthly' ? 'per month' : 'per year'}
+                  : billing === 'monthly' ? 'billed monthly' : 'per month - total billed anually'}
               </span>
             </div>
 

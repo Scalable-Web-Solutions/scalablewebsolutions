@@ -14,16 +14,16 @@
 <header class="z-50 fixed top-0 left-0 right-0 bg-gradient-to-b from-black/15 to-transparent overflow-x-hidden">
   <div class="mx-auto max-w-7xl px-4 md:px-6 py-6 flex items-center justify-between">
     <!-- Logo/Title -->
-    <div on:click={()=> window.location.href = '/'} class="flex items-center gap-3 min-w-0">
+    <div on:click={()=> window.location.href = '/'} class="flex items-center gap-3 min-w-0 cursor-pointer">
       <img src={logo} class="w-10 h-10 rounded-lg flex-shrink-0" alt="" />
       <h1 class="text-3xl md:text-5xl truncate">Scalable</h1>
     </div>
 
     <!-- Desktop nav -->
     <nav class="hidden md:flex items-center gap-6">
-      <a on:click={() => scrollToId('about')}>About</a>
-      <a on:click={() => scrollToId('results')}>Results</a>
-      <p on:click={() => scrollToId('contact')}>Demo</p>
+      <a href="/#about">About</a>
+      <a href="/#results">Results</a>
+      <a href="/#demo">Demo</a>
       <a href="/pricing">Pricing</a>
 
       <button on:click={() => scrollToId('contact')} data-cta="navbar_contact_us" class="bg-[#1D2939] text-white px-5 py-3 rounded-full">Contact Us</button>

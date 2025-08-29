@@ -7,14 +7,17 @@
     <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
       <!-- Left: Copy -->
       <div>
-        <h2 class="text-4xl md:text-5xl font-medium leading-tight">
-          We <span class="text-indigo-600 font-semibold">boost growth,</span> so you don't have to.
+        <h2 class="text-4xl md:text-[45px] font-medium leading-tight">
+          We <span class="text-indigo-600 font-semibold">leverage your website for sustainable growth</span> so you don't have to.
         </h2>
         <p class="mt-4 text-gray-700 max-w-xl">
-          Scale your E-commerce platform with ease. Say no to hassle and let us handle the rest.
+          Empowering high-growth eCommerce brands to scale with data-driven Revenue Per Visitor optimization — without the hassle of traditional marketing agencies.
         </p>
-        <button data-cta="hero_get_started" on:click={() => scrollToId('about')} class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all">Get Started</button>
-
+        <div class="flex gap-2 items-center pt-[10px]">
+          <span class="bg-green-500 size-3 rounded-full block animate-pulse"></span>
+          <span class="uppercase text-sm">Accepting new clients</span>
+        </div>
+        <button data-cta="hero_get_started" on:click={() => scrollToId('contact')} class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all"><span class="animate-pulse">Get an estimate</span></button>
       </div>
 
         <!-- Right: Mock window -->
