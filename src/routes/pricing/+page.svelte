@@ -17,7 +17,8 @@
         'Weekly A/B testing',
         'Speed & responsiveness boost',
         'Conversion optimisation',
-        'Basic analytics dashboard'
+        'Basic analytics dashboard',
+        'Discounts on annual plans',
       ]
     },
   ];
