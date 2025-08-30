@@ -2,7 +2,7 @@
   import { Check, ArrowRight, Sparkles } from 'lucide-svelte';
 
   type Billing = 'monthly' | 'anually';
-  let billing: Billing = 'anually';
+  let billing: Billing = 'monthly';
 
   const plans = [
     {
@@ -10,7 +10,7 @@
       badge: 'Most popular',
       highlight: true,
       description: 'For brands ready to scale & optimize conversions.',
-      prices: { monthly: 5000, anually: 4170 },
+      prices: { monthly: 5000, anually: null },
       cta: 'Get Started',
       datacta: 'premium_pkg',
       features: [
