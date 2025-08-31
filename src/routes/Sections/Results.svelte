@@ -1,13 +1,14 @@
 <script lang="ts">
   import { CalendarCheck2, PenTool, Code2, TestTube2, Rocket } from "lucide-svelte";
   import lighthousereport from '$lib/assets/lighthouse.png';
+    import { onDestroy, onMount } from "svelte";
 
   let active = 0;
   const steps = [
     { t: "Consultation", d: "We align on goals, audience, and current performance. Clear scope, clear KPI.", icon: CalendarCheck2, chips: ["Goals & KPIs","Analytics access","Tech audit","CRO opps"] },
     { t: "Design", d: "Wireframes → system → key flows. Accessibility and mobile-first baked in.", icon: PenTool, chips: ["Wireframes","Visual system","Flow protos","A11y pass"] },
     { t: "Development", d: "Ship a fast, secure stack. Componentized UI, CMS where it matters, trackable CTAs.", icon: Code2, chips: ["Component lib","CMS where needed","Perf budget","Event tracking"] },
-    { t: "Testing", d: "Perf, UX, analytics QA. Lighthouse 90+ targets and experiment hooks ready.", icon: TestTube2, media: lighthousereport, chips: [] },
+    { t: "Testing", d: "Perf, UX, analytics QA. Lighthouse 90+ targets and experiment hooks ready.", icon: TestTube2, chips: ["Lighthouse","Data-driven results","User testing","Accessibility"] },
     { t: "Launch & Iterate", d: "Deploy, monitor, and iterate with an A/B backlog focused on conversion wins.", icon: Rocket, chips: ["Weekly review","KPI tracker","A/B backlog","Rollouts"] }
   ];
 
@@ -39,6 +40,42 @@
 
   // helper: stagger delay when unlocking everything
   const delay = (i: number) => (allUnlocked ? `${i * 90}ms` : "0ms");
+
+  let sectionRef: HTMLElement;
+let progress = 0; // 0..1
+let sectionTop = 0;
+let sectionHeight = 0;
+
+function updateProgress() {
+  if (!sectionRef) return;
+  const y = window.scrollY;
+  const denom = Math.max(1, sectionHeight - window.innerHeight);
+  // clamp between 0 and 1
+  progress = Math.min(1, Math.max(0, (y - sectionTop) / denom));
+}
+
+function measure() {
+  if (!sectionRef) return;
+  const rect = sectionRef.getBoundingClientRect();
+  sectionTop = window.scrollY + rect.top;
+  sectionHeight = rect.height;
+  updateProgress();
+}
+
+onMount(() => {
+  measure();
+  if(typeof window !== 'undefined') {
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', measure);
+  }
+});
+
+onDestroy(() => {
+  if(typeof window !== 'undefined') {
+    window.removeEventListener('scroll', updateProgress);
+    window.removeEventListener('resize', measure);
+  }
+});
 </script>
 
 <style>
@@ -56,12 +93,21 @@
   }
 </style>
 
-<section id="results" class="relative z-20 bg-white py-16 md:py-20">
+<section id="results" bind:this={sectionRef} class="relative z-20 bg-white py-16 md:py-20">
   <div class="mx-auto max-w-6xl px-6">
     <h2 class="text-3xl md:text-4xl text-center font-semibold">Our Process</h2>
     <p class="mt-2 text-center text-gray-600">Concrete phases. Measurable outcomes.</p>
 
     <div class="relative mt-10 md:mt-12">
+    <!-- Sticky left progress bar -->
+    <div class="hidden lg:block absolute -left-8 top-0 h-full">
+      <div class="sticky top-24 w-1 rounded-full bg-indigo-200/60 overflow-hidden"
+        style="height: calc(100vh + 6rem);">
+        <div class="w-full bg-indigo-600 origin-top"
+         style={`height:${(progress * 100).toFixed(2)}%`}></div>
+      </div>
+    </div>
+
       <div class="pointer-events-none hidden lg:block absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-indigo-200/0 via-indigo-200 to-indigo-200/0"></div>
 
       <ol class="space-y-10 lg:space-y-14">
