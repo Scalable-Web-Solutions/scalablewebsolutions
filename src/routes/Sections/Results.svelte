@@ -162,7 +162,7 @@ onDestroy(() => {
 
       <div class="mt-10 flex justify-center">
         <a href="#contact" class="bg-gray-900 text-white px-6 py-3.5 rounded-full font-medium hover:bg-gray-800 active:scale-[0.99] transition">
-          Start with a 20-minute consult
+          Start with a free 20-minute consultation
         </a>
       </div>
     </div>

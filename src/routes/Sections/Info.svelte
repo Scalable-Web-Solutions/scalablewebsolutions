@@ -136,7 +136,7 @@
           on:click={() => (window.location.href = "/#contact")}
           data-cta="schedule_consultation"
         >
-          Schedule a consultation
+          Schedule a free 20-minute consultation
         </button>
       </div>
     </aside>

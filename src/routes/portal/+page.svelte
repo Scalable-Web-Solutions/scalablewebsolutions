@@ -11,7 +11,7 @@
     <h1 class="mb-6 text-4xl font-bold text-center text-[#1D2939]">Client Portal</h1>
 
     <!-- form box with visible padding -->
-    <form class="w-full rounded-2xl bg-white p-6 shadow-lg ring-1 ring-black/5">
+    <form method="POST" class="w-full rounded-2xl bg-white p-6 shadow-lg ring-1 ring-black/5">
       <div class="mb-4">
         <label for="email" class="block text-sm font-medium text-[#1D2939]">Email</label>
         <input
@@ -31,8 +31,7 @@
       </div>
 
       <div class="flex items-center justify-between gap-3">
-        <button type="submit" class="rounded-full bg-indigo-600 px-5 py-3 text-white border-none outline-none">Login</button>
-        <a href="/portal/register" class="text-sm text-[#1D2939]">Register</a>
+        <button type="submit" class="rounded-full bg-indigo-600 px-5 py-2 text-white border-none outline-none">Login</button>
       </div>
     </form>
   </div>

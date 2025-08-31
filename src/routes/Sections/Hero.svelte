@@ -17,7 +17,7 @@
           <span class="bg-green-500 size-3 rounded-full block animate-pulse"></span>
           <span class="uppercase text-sm">Accepting new clients</span>
         </div>
-        <button data-cta="hero_get_started" on:click={() => scrollToId('contact')} class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all"><span class="animate-pulse">Get an estimate</span></button>
+        <button data-cta="hero_get_started" on:click={() => scrollToId('contact')} class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all"><span class="animate-pulse">Free 20-minute consultation</span></button>
       </div>
 
         <!-- Right: Mock window -->

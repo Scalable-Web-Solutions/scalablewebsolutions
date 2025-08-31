@@ -23,11 +23,10 @@
     <nav class="hidden md:flex items-center gap-6">
       <a href="/#about">About</a>
       <a href="/#results">Results</a>
-      <a href="/#demo">Demo</a>
       <a href="/pricing">Pricing</a>
 
       <button on:click={() => scrollToId('contact')} data-cta="navbar_contact_us" class="bg-[#1D2939] text-white px-5 py-3 rounded-full">Contact Us</button>
-      <button on:click={() => scrollToId('contact')} data-cta="navbar_request_demo" class="bg-indigo-600 text-white px-5 py-3 rounded-full -ml-2">Request a Demo</button>
+      <button on:click={() => scrollToId('contact')} data-cta="navbar_request_demo" class="bg-indigo-600 text-white px-5 py-3 rounded-full -ml-2">Book a free 20-minute consultation</button>
       <button on:click={() => window.location.href = '/portal'} class="bg-gray-200 text-black px-5 py-3 rounded-full w-full sm:w-auto shadow-sm">Client Portal</button>
     </nav>
 
