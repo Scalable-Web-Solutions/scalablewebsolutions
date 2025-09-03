@@ -8,7 +8,7 @@
       <!-- Left: Copy -->
       <div>
         <h2 class="text-4xl md:text-[45px] font-medium leading-tight">
-          We <span class="text-indigo-600 font-semibold">leverage your website for sustainable growth</span> so you don't have to.
+          We <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">leverage your website for sustainable growth</span> so you don't have to.
         </h2>
         <p class="mt-4 text-gray-700 max-w-xl">
           Empowering high-growth eCommerce brands to scale with data-driven Revenue Per Visitor optimization — without the hassle of traditional marketing agencies.
@@ -17,7 +17,7 @@
           <span class="bg-green-500 size-3 rounded-full block animate-pulse"></span>
           <span class="uppercase text-sm">Accepting new clients</span>
         </div>
-        <button data-cta="hero_get_started" on:click={() => scrollToId('contact')} class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all"><span class="animate-pulse">Free 20-minute consultation</span></button>
+        <button data-cta="hero_get_started" on:click={() => scrollToId('contact')} class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all"><span class="text-lg">Free 20-minute consultation</span></button>
       </div>
 
         <!-- Right: Mock window -->

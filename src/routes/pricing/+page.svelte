@@ -41,7 +41,7 @@
     <!-- Hero -->
     <section class="text-center">
       <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
-        Simple, transparent <span class="text-indigo-600">pricing</span>
+        Simple, transparent <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text">pricing</span>
       </h1>
       <p class="mx-auto mt-4 max-w-2xl text-gray-600 text-lg">
         RPV growth with data-backed A/B testing, trust building layouts, and your own <b>custom</b> analytics dashboard.
@@ -133,12 +133,12 @@
     <!-- Tiny FAQ -->
     <section class="mt-14 grid gap-4 md:max-w-3xl md:mx-auto">
       <details class="group rounded-2xl border border-gray-200 bg-white/80 p-5">
-        <summary class="cursor-pointer list-none font-medium">What is the main difference between each package?</summary>
-        <p class="mt-3 text-gray-600">Each package caters to different needs; if you’re unsure, a 10 minute call can clarify.</p>
+        <summary class="cursor-pointer list-none font-medium">Why Scalable Web Solutions?</summary>
+        <p class="mt-3 text-gray-600">We help businesses grow by providing the tools and support they need to succeed. Our team of experts are here to help you every step of the way.</p>
       </details>
       <details class="group rounded-2xl border border-gray-200 bg-white/80 p-5">
-        <summary class="cursor-pointer list-none font-medium">Can I upgrade later?</summary>
-        <p class="mt-3 text-gray-600">Yep. Move to a custom Scale program anytime.</p>
+        <summary class="cursor-pointer list-none font-medium">Yearly vs. Monthly</summary>
+        <p class="mt-3 text-gray-600">We offer both monthly and annual plans. The monthly plan is a great way to get started, and the annual plan is a great way to save money.</p>
       </details>
     </section>
   </main>
