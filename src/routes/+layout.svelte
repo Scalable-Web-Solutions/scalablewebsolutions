@@ -1,55 +1,58 @@
 <script lang="ts" module>
-	declare global {
-		interface Window {
-			analytics: {
-                getAnonUserId?: () => void;
-				init: (config?: any) => void;
-				trackPageview?: () => void;
-				trackEvent?: (type: string, fields?: object) => void;
-				setExperimentContext?: (experiments: Record<string, string>, anonId: string) => void;
-			};
-			firebase: any;
-		}
-	}
+  declare global {
+    interface Window {
+      analytics?: {
+        VERSION?: string;
+        getAnonUserId?: () => string;        // <-- return string
+        init: (config?: any) => void;
+        trackPageview?: () => void;
+        trackEvent?: (type: string, fields?: object) => void;
+        setExperimentContext?: (experiments: Record<string, string>, anonId?: string) => void;
+      };
+      firebase: any;
+    }
+  }
 </script>
 
 <script lang="ts">
-	import '../app.css';
-	import favicon from '$lib/assets/favicon.ico';
-    import Navbar from './Sections/Navbar.svelte';
-	import logo from '$lib/assets/scalablewebsolutions.png'
-    import { onMount, setContext } from 'svelte';
-	const { data, children } = $props<{
-    	data: { experiments: Record<string, string>; anonId?: string };
-    	children?: any; // type depends on your usage
-  	}>();
+  import '../app.css';
+  import favicon from '$lib/assets/favicon.ico';
+  import Navbar from './Sections/Navbar.svelte';
+  import logo from '$lib/assets/scalablewebsolutions.png';
+  import { onMount, setContext } from 'svelte';
 
-	onMount(() => {
-		function initTracking()
-		{
-			if(window.analytics){
-				window.analytics.init({project: 'scalable-web-solutions'});
-				const uid = window.analytics.getAnonUserId?.();
-				if(data.experiments){
-					window.analytics.setExperimentContext?.(data.experiments, data.anonId || uid);
-				}
-			}
-			else{
-				console.log('Analytics not initialized');
-			}
-		}
-		initTracking();
-		
-	})
+  const { data, children } = $props<{ 
+    data: { experiments?: Record<string, string>; anonId?: string }; 
+    children?: any 
+  }>();
 
-	setContext('experiments', data.experiments);
+
+  onMount(async () => {
+    try {
+      window.analytics?.init({ project: 'scalable-web-solutions' });
+
+      const uid = window.analytics?.getAnonUserId?.();
+      const assignments = data?.experiments ?? {};
+      if (window.analytics?.setExperimentContext && uid && Object.keys(assignments).length) {
+        window.analytics.setExperimentContext(assignments, uid);
+      }
+
+      // optional: sanity log
+      console.log('analytics ready', window.analytics?.VERSION ?? 'no-version');
+    } catch (e) {
+      console.error('Failed to load analytics.js', e);
+    }
+  });
+
+  // expose experiments to children if you use them
+  setContext('experiments', data?.experiments ?? {});
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+  <link rel="icon" href={favicon} />
 </svelte:head>
 
 <div class="overflow-x-hidden">
-	<Navbar logo={logo} />
-	{@render children?.()}
+  <Navbar {logo} />
+  {@render children?.()}
 </div>

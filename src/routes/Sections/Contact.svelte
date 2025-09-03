@@ -1,5 +1,8 @@
 <script lang="ts">
   import { Mail, Phone, CalendarClock, Copy, Check, ShieldCheck, X, CalendarDays, Clock } from "lucide-svelte";
+  import { Experiment } from "sws-parallel-render-engine";
+  import ContactTwo from "../reusable/ContactTwo.svelte";
+  import ContactOne from "../reusable/ContactOne.svelte";
 
   const email = "contact@scalableweb.solutions";
   const phone = "+17737061447";
@@ -101,9 +104,19 @@ Thanks!`;
   function backdropClose(e: MouseEvent) {
     if (e.target === e.currentTarget) closeModal();
   }
+
+  const { experiments } = $props<{ experiments: Record<string, string> }>();
 </script>
 
 <section id="contact" class="relative z-10 w-full bg-gray-50 py-10">
+  <!-- <Experiment id="landing_hero_v1" current={experiments.landing_hero_v1} let:current>
+      {#if current === 'alt'}
+        <ContactTwo/>
+      {:else}
+        <ContactOne/>
+      {/if}
+
+    </Experiment> -->
   <div class="mx-auto max-w-7xl px-6 py-12 md:py-16">
     <div class="grid grid-cols-1 lg:grid-cols-[1.1fr] gap-8">
       <div class="rounded-2xl backdrop-blur p-6 md:p-8">

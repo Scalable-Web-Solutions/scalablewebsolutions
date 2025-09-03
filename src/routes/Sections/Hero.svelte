@@ -8,7 +8,15 @@
       <!-- Left: Copy -->
       <div>
         <h2 class="text-4xl md:text-[45px] font-medium leading-tight">
-          We <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">leverage your website for sustainable growth</span> so you don't have to.
+            We
+            <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">leverage</span>
+            
+            <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">your</span> 
+            website
+            for
+            <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">sustainable</span>
+            <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">growth</span>
+            so you don't have to.
         </h2>
         <p class="mt-4 text-gray-700 max-w-xl">
           Empowering high-growth eCommerce brands to scale with data-driven Revenue Per Visitor optimization — without the hassle of traditional marketing agencies.
