@@ -2,6 +2,7 @@
 	declare global {
 		interface Window {
 			analytics: {
+                getAnonUserId?: () => void;
 				init: (config?: any) => void;
 				trackPageview?: () => void;
 				trackEvent?: (type: string, fields?: object) => void;
@@ -28,8 +29,9 @@
 		{
 			if(window.analytics){
 				window.analytics.init({project: 'scalable-web-solutions'});
+				const uid = window.analytics.getAnonUserId?.();
 				if(data.experiments){
-					window.analytics.setExperimentContext?.(data.experiments, data.anonId);
+					window.analytics.setExperimentContext?.(data.experiments, data.anonId || uid);
 				}
 			}
 			else{
