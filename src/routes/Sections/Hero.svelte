@@ -1,12 +1,18 @@
 <script>
+    import { fly } from "svelte/transition";
     import CountUp from "../reusable/CountUp.svelte";
     import { scrollToId } from "../reusable/functions";
+    import { onMount } from "svelte";
+
+    let mounted = false;
+    onMount(() => (mounted = true));
 </script>
 <section class="relative z-20 w-full min-h-screen flex items-center md:mt-5 mt-20 pb-5">
     <div class="mx-auto max-w-7xl px-6">
     <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-12">
       <!-- Left: Copy -->
-      <div>
+      {#if mounted}
+      <div transition:fly={{ y: 40, duration: 800, delay: 200 }}>
         <h2 class="text-4xl md:text-[45px] font-medium leading-tight">
             We
             <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">leverage</span>
@@ -27,10 +33,16 @@
         </div>
         <button data-cta="hero_get_started" on:click={() => scrollToId('contact')} class="bg-[#1D2939] text-white px-5 py-3 w-full rounded-full mt-5 hover:scale-105 transition-all"><span class="text-lg">Free 20-minute consultation</span></button>
       </div>
+      {/if}
 
+      {#if mounted}
         <!-- Right: Mock window -->
-        <div class="flex justify-center md:justify-end shadow-[0_10px_50px_-15px_rgba(0,0,0,0.2)]">
-          <div class="w-[700px] h-[400px] bg-white rounded-2xl relative shadow-lg border border-gray-200 overflow-hidden">
+        <div transition:fly={{ y: 10, duration: 1000, delay: 600 }} class="flex justify-center md:justify-end shadow-[0_10px_50px_-15px_rgba(0,0,0,0.2)]">
+          
+          <div
+          
+          class="w-[700px] h-[400px] bg-white rounded-2xl relative shadow-lg border border-gray-200 overflow-hidden"
+          >
             <!-- Top Bar -->
             <div class="absolute top-0 left-0 w-full h-12 bg-gray-100 border-b border-gray-200 flex items-center px-5">
               <div class="flex space-x-2">
@@ -133,6 +145,7 @@
             </div>
           </div>
         </div>
+        {/if}
         <!-- /Right -->
       </div>
     </div>

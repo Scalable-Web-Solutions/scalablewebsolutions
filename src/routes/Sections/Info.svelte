@@ -145,7 +145,7 @@
     <div class="relative">
       <div
         id="about-carousel"
-        class="h-svh lg:h-[70vh] overflow-hidden rounded-3xl no-scrollbar backdrop-blur"
+        class="h-[62vh] sm:h-[66vh] md:h-[68vh] lg:h-[70vh] max-h-[720px] overflow-hidden rounded-3xl no-scrollbar backdrop-blur"
         on:touchstart={onTouchStart}
         on:touchend={onTouchEnd}
       >
