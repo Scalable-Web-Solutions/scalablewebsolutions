@@ -6,6 +6,7 @@
     import Contact from './Sections/Contact.svelte';
 
     import kaytee from '$lib/assets/kaytee.jpg'
+    import MissingOut from './Sections/MissingOut.svelte';
 
     const { data } = $props<{
       data: { experiments: Record<string, string>; anonId?: string }
@@ -36,6 +37,7 @@
 
   <Info/>
   <Results/>
+  <MissingOut/>
   <Contact experiments={data.experiments} />
   <Footer/>
 </div>

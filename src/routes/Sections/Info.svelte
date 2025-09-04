@@ -145,11 +145,10 @@
     <div class="relative">
       <div
         id="about-carousel"
-        class="h-[62vh] sm:h-[66vh] md:h-[68vh] lg:h-[70vh] max-h-[720px] overflow-hidden rounded-3xl no-scrollbar backdrop-blur"
+        class="h-[62vh] sm:h-[66vh] md:h-[68vh] lg:h-[70vh] max-h-[720px] overflow-hidden rounded-3xl no-scrollbar backdrop-blur" 
         on:touchstart={onTouchStart}
         on:touchend={onTouchEnd}
       >
-        <!-- track transforms vertically by active index -->
         <div class="track h-full" style={`transform: translateY(-${active * 100}%);`}>
           {#each steps as s, i}
             <section class="min-h-full p-6 md:p-10 flex items-start">
