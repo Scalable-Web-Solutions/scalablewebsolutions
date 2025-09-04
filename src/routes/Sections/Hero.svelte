@@ -15,13 +15,13 @@
       <div transition:fly={{ y: 40, duration: 800, delay: 200 }}>
         <h2 class="text-4xl md:text-[45px] font-medium leading-tight">
             We
-            <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">leverage</span>
+            <span class="bg-gradient-to-r from-[#4726ff] via-[#7075ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">leverage</span>
             
-            <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">your</span> 
+            <span class="bg-gradient-to-r from-[#4726ff] via-[#7075ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">your</span> 
             website
             for
-            <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">sustainable</span>
-            <span class="bg-gradient-to-r from-[#4726ff] via-[#b370ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">growth</span>
+            <span class="bg-gradient-to-r from-[#4726ff] via-[#7075ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">sustainable</span>
+            <span class="bg-gradient-to-r from-[#4726ff] via-[#7075ff] to-[#4726ff] text-transparent bg-clip-text font-semibold">growth</span>
             so you don't have to.
         </h2>
         <p class="mt-4 text-gray-700 max-w-xl">
