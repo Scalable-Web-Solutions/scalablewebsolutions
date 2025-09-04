@@ -2,6 +2,7 @@
   import { CalendarCheck2, PenTool, Code2, TestTube2, Rocket } from "lucide-svelte";
   import lighthousereport from '$lib/assets/lighthouse.png';
     import { onDestroy, onMount } from "svelte";
+    import Pipeline from "../reusable/Pipeline.svelte";
 
   let active = 0;
   const steps = [
@@ -93,8 +94,15 @@ onDestroy(() => {
   }
 </style>
 
-<section id="results" bind:this={sectionRef} class="relative z-20 bg-white py-16 md:py-20">
-  <div class="mx-auto max-w-6xl px-6">
-    <h1 class="text-3xl font-bold text-center text-gray-900">Missing Out</h1>
+<section id="results" bind:this={sectionRef} class="relative z-20 bg-gray-100 py-16 md:py-20">
+  <div class="mx-auto max-w-6xl px-6 flex flex-col gap-10">
+    <Pipeline title="Let Scalable Web Solutions help you"
+    kicker="You're missing out on"  
+    subtitle="Growth opportunities that drive results."
+    rows={[
+      { label: 'Total RPV', icon: '💵', other: 0.3, withUs: 0.72 },
+      { label: 'Total Conversion Rate',        icon: '%',  other: 0.2, withUs: 0.5 },
+      { label: 'Total ROI',                 icon: '💲',  other: 0.1, withUs: 0.8 }
+    ]}/>
   </div>
 </section>

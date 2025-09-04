@@ -105,7 +105,7 @@ Thanks!`;
     if (e.target === e.currentTarget) closeModal();
   }
 
-  const { experiments } = $props<{ experiments: Record<string, string> }>();
+  //const { experiments } = $props<{ experiments: Record<string, string> }>();
 </script>
 
 <section id="contact" class="relative z-10 w-full bg-gray-50 py-10">

@@ -38,6 +38,6 @@
   <Info/>
   <Results/>
   <MissingOut/>
-  <Contact experiments={data.experiments} />
+  <Contact />
   <Footer/>
 </div>

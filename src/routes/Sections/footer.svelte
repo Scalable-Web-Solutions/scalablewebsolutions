@@ -7,7 +7,7 @@
 
   <h1 
     id="gradient-text"
-    class="text-[260px] font-semibold text-center bg-clip-text text-transparent transition-all duration-300"
+    class="text-[75px] lg:text-[260px] font-semibold text-center bg-clip-text text-transparent transition-all duration-300"
     style="
       background-image: radial-gradient(circle at 50% 50%, #bb71ff, #9a4dff, #6d28d9);
       background-size: 200% 200%;
