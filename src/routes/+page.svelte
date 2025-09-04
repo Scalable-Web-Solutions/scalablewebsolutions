@@ -39,5 +39,4 @@
   <Results/>
   <MissingOut/>
   <Contact />
-  <Footer/>
 </div>

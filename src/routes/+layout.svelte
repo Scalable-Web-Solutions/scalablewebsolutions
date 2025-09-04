@@ -20,6 +20,7 @@
   import Navbar from './Sections/Navbar.svelte';
   import logo from '$lib/assets/scalablewebsolutions.png';
   import { onMount, setContext } from 'svelte';
+  import Footer from './Sections/footer.svelte';
 
   const { data, children } = $props<{ 
     data: { experiments?: Record<string, string>; anonId?: string }; 
@@ -55,4 +56,5 @@
 <div class="overflow-x-hidden">
   <Navbar {logo} />
   {@render children?.()}
+  <Footer/>
 </div>
