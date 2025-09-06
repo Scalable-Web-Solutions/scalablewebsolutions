@@ -13,6 +13,9 @@
   // Absolute page Y at which we want to dock (top of card, in normal flow)
   let triggerY = 0;
 
+  let isMobile = false;
+  let mql: MediaQueryList;
+
   // Add a little buffer so we don't bounce at the threshold
   const HYST = 24; // px
 
@@ -33,8 +36,23 @@
     }
   }
 
+  function updateIsMobile() {
+    if (mql) {
+      isMobile = mql.matches;
+    }
+    if (isMobile) {
+      isDocked = false;
+      isExpanded = false;
+      measuredH = 0;
+    } else {
+      // recompute trigger for desktop
+      computeTrigger();
+    }
+  }
+
   let ticking = false;
   function onScroll() {
+    if (isMobile) return;
     if (ticking) return;
     ticking = true;
     requestAnimationFrame(() => {
@@ -59,6 +77,10 @@
   onMount(async () => {
     if (typeof window === "undefined") return;
 
+    mql = window.matchMedia("(max-width: 767.98px)");
+    mql.addEventListener?.("change", updateIsMobile);
+    updateIsMobile();
+
     await computeTrigger();
 
     // Recompute if layout or element size changes
@@ -74,10 +96,12 @@
     if (typeof window === "undefined") return;
     window.removeEventListener("scroll", onScroll);
     window.removeEventListener("resize", computeTrigger);
+    mql?.removeEventListener?.("change", updateIsMobile);
     ro?.disconnect();
   });
 
   function toggleExpand(e?: MouseEvent) {
+    if (!isDocked || isMobile) return;
     if (!isDocked) return;
     isExpanded = !isExpanded;
     e?.stopPropagation();
@@ -86,7 +110,7 @@
 
 <section class="py-14 relative">
   <!-- Spacer keeps layout height when the card is fixed -->
-  <div bind:this={holder} style="height: {isDocked ? measuredH + 'px' : 0}px;"></div>
+  <div bind:this={holder} style="height: {( !isMobile && isDocked ) ? measuredH + 'px' : 0}px;"></div>
 
   <!-- svelte-ignore a11y_interactive_supports_focus -->
   <!-- svelte-ignore a11y_click_events_have_key_events -->
@@ -95,14 +119,11 @@
     role="button"
     aria-label="Supported platforms"
     on:click={toggleExpand}
-    class={`mx-auto max-w-6xl px-6 transition-[transform,box-shadow,opacity,left,bottom,width,height]
-            duration-500 ease-[cubic-bezier(.2,.7,.2,1)]
-            will-change:transform
-            ${isDocked ? '' : ''}`}
-    style={isDocked
+    class="mx-auto max-w-6xl px-6 transition-[transform,box-shadow,opacity,left,bottom,width,height] duration-500 ease-[cubic-bezier(.2,.7,.2,1)] will-change-transform"
+    style={( !isMobile && isDocked )
       ? `
         position: fixed;
-        left: 0.87rem;
+        left: 1rem;
         bottom: 1rem;
         width: ${isExpanded ? 'min(92vw, 720px)' : '350px'};
         z-index: 50;
