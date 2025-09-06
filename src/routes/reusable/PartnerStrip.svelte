@@ -119,7 +119,7 @@
     role="button"
     aria-label="Supported platforms"
     on:click={toggleExpand}
-    class="mx-auto max-w-6xl px-6 transition-[transform,box-shadow,opacity,left,bottom,width,height] duration-500 ease-[cubic-bezier(.2,.7,.2,1)] will-change-transform"
+    class="mx-auto max-w-3xl px-6 transition-[transform,box-shadow,opacity,left,bottom,width,height] duration-500 ease-[cubic-bezier(.2,.7,.2,1)] will-change-transform"
     style={( !isMobile && isDocked )
       ? `
         position: fixed;
@@ -139,7 +139,7 @@
               transition-transform`}
     >
       <div class="px-6 sm:px-8 py-6 flex items-center justify-between gap-4">
-        <p class="text-sm tracking-wide text-slate-600">Built for modern commerce</p>
+        <p class="text-sm tracking-wide text-slate-600 justify-center flex w-full">Built for modern commerce</p>
         {#if isDocked}
           <button
             class="shrink-0 rounded-full bg-black/5 hover:bg-black/10 transition p-2"
