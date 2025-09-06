@@ -7,6 +7,7 @@
 
     import kaytee from '$lib/assets/kaytee.jpg'
     import MissingOut from './Sections/MissingOut.svelte';
+    import PartnerStrip from './reusable/PartnerStrip.svelte';
 
     const { data } = $props<{
       data: { experiments: Record<string, string>; anonId?: string }
@@ -22,18 +23,9 @@
     <div class="absolute z-[1] right-[15%] top-[-120px] w-[420px] h-[420px] bg-purple-300/25 blur-[110px] rounded-full"></div>
   </div>
   <Hero/>
-  <div class="w-full bg-[#EBEEFA] py-6">
-  <div class="w-full h-full flex flex-col justify-center items-center gap-4">
-    <p class="text-sm md:text-base font-medium text-gray-700 font-semibold">
-      We scale with the platforms you love
-    </p>
-    <div class="flex justify-center items-center gap-6">
-      <img src="https://play-lh.googleusercontent.com/aPsA6vS25mrocOJqZhTZyxm7sntS_IZuHh4oLBI6v-70A_mLV0Fe0spqSDTbK_Fy8As" class="w-[60px] h-[60px] rounded-lg object-contain" alt="WooCommerce" />
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYZyqmtqSYlC6DpFKfKYxy4bw_N8Itrv3wFg&s" class="w-[60px] h-[60px] rounded-lg object-contain" alt="BigCommerce" />
-      <img src="https://play-lh.googleusercontent.com/lQYxSdISBENwWO7RCF1j_AzjzdOaa1LUgRckYPFVvDkSWdD8P6jqCZebmAyZfufGpIY" class="w-[60px] h-[60px] rounded-lg object-contain" alt="Shopify" />
-    </div>
-  </div>
-</div>
+  <PartnerStrip />
+
+
 
   <Info/>
   <Results/>

@@ -7,13 +7,13 @@
 
   <h1 
     id="gradient-text"
-    class="text-[75px] lg:text-[260px] font-semibold text-center bg-clip-text text-transparent transition-all duration-300"
+    class="text-[75px] font-medium lg:text-[260px] text-center bg-clip-text text-transparent transition-all duration-300"
     style="
-      background-image: radial-gradient(circle at 50% 50%, #bb71ff, #9a4dff, #6d28d9);
+      background-image: radial-gradient(circle at 50% 50%, #3a2a99, #7075ff, #3a2a99);
       background-size: 200% 200%;
     "
   >
-    SCALABLE
+    Scalable
   </h1>
 </div>
 
@@ -28,7 +28,7 @@
     const x = (e.clientX / innerWidth) * 100;
     const y = (e.clientY / innerHeight) * 100;
     if (text) {
-      text.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, #bb71ff, #9a4dff, #6d28d9)`;
+      text.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, #3a2a99, #7075ff, #3a2a99)`;
     }
   });
   })

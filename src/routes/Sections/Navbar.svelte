@@ -59,7 +59,7 @@
         <div class="flex flex-col sm:flex-row gap-3 pt-2">
           <button class="bg-[#1D2939] text-white px-5 py-3 rounded-full w-full sm:w-auto">Contact Us</button>
           <button class="bg-gray-200 text-black px-5 py-3 rounded-full w-full sm:w-auto sm:-ml-2">Request a Demo</button>
-          <button class="bg-[#1D2939] text-white px-5 py-3 rounded-full w-full sm:w-auto">Get Started</button>
+          <button class="bg-gray-200 text-white px-5 py-3 rounded-full w-full sm:w-auto">Client Portal</button>
         </div>
       </div>
     </div>

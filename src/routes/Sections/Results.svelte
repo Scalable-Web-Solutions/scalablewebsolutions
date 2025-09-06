@@ -5,11 +5,11 @@
 
   let active = 0;
   const steps = [
-    { t: "Consultation", d: "We align on goals, audience, and current performance. Clear scope, clear KPI.", icon: CalendarCheck2, chips: ["Goals & KPIs","Analytics access","Tech audit","CRO opps"] },
-    { t: "Design", d: "Wireframes → system → key flows. Accessibility and mobile-first baked in.", icon: PenTool, chips: ["Wireframes","Visual system","Flow protos","A11y pass"] },
-    { t: "Development", d: "Ship a fast, secure stack. Componentized UI, CMS where it matters, trackable CTAs.", icon: Code2, chips: ["Component lib","CMS where needed","Perf budget","Event tracking"] },
-    { t: "Testing", d: "Perf, UX, analytics QA. Lighthouse 90+ targets and experiment hooks ready.", icon: TestTube2, chips: ["Lighthouse","Data-driven results","User testing","Accessibility"] },
-    { t: "Launch & Iterate", d: "Deploy, monitor, and iterate with an A/B backlog focused on conversion wins.", icon: Rocket, chips: ["Weekly review","KPI tracker","A/B backlog","Rollouts"] }
+    { t: "Consultation", d: "We align on goals, audience, and current performance. Clear scope, clear KPI.", icon: CalendarCheck2, chips: ["Goals & KPIs","Analytics review","Tech audit","CRO opps"] },
+    { t: "Design", d: "Clear and responsive UX design. Small changes that make a big impact.", icon: PenTool, chips: ["Shopify themes", "Trust building layouts", "Data informed changes"] },
+    { t: "Analytics", d: "Deep dive into your analytics to determine what we have to focus on to improve metrics.", icon: Code2, chips: ["Deep analysis", "Weekly analytics review", "Strategy review"] },
+    { t: "Testing", d: "Perf, UX, analytics QA. Lighthouse 90+ targets and experiment hooks ready.", icon: TestTube2, chips: ["A/B testing","User testing","Heatmaps"] },
+    { t: "Launch & Iterate", d: "Deploy, monitor, and iterate with an A/B backlog focused on conversion wins.", icon: Rocket, chips: ["Check-ins","Dedicated account manager","Rollouts"] }
   ];
 
   // persist until reload

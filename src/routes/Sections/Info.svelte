@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Globe, ShieldCheck, Users, ChevronsDown, Pause, Play } from "lucide-svelte";
-  import { onMount, onDestroy } from "svelte";
+  import { onMount } from "svelte";
 
   const steps = [
     {
@@ -35,12 +35,9 @@
         "You’ll have a direct line to us—reviews, roadmaps, and weekly wins that compound.",
       icon: Users
     }
-  ]
+  ];
 
-  // your steps stay the same
   let active = 0;
-
-  // carousel state
   let autoplay = true;
   let inView = true;
   let timer: ReturnType<typeof setInterval> | null = null;
@@ -52,37 +49,24 @@
 
   function start() {
     stop();
-    if (autoplay && inView) timer = setInterval(next, INTERVAL);
+    if (autoplay && inView && !isMobile) timer = setInterval(next, INTERVAL);
   }
   function stop() { if (timer) { clearInterval(timer); timer = null; } }
   function toggleAutoplay() { autoplay = !autoplay; start(); }
   function restart() { start(); }
 
-  // pause when carousel not visible / tab hidden
+  // mobile detection
+  let isMobile = false;
   onMount(() => {
+    const mq = window.matchMedia("(max-width: 1024px)");
+    const set = () => (isMobile = mq.matches);
+    set();
+    mq.addEventListener?.("change", set);
     start();
-    const el = document.getElementById("about-carousel");
-    let io: IntersectionObserver | undefined;
-
-    if (el && "IntersectionObserver" in window) {
-      io = new IntersectionObserver(
-        (entries) => entries.forEach((e) => { inView = e.isIntersecting; inView ? start() : stop(); }),
-        { threshold: 0.3 }
-      );
-      io.observe(el);
-    }
-
-    const onVis = () => { document.hidden ? stop() : start(); };
-    document.addEventListener("visibilitychange", onVis);
-
-    return () => {
-      stop();
-      io?.disconnect();
-      document.removeEventListener("visibilitychange", onVis);
-    };
+    return () => mq.removeEventListener?.("change", set);
   });
 
-  // simple swipe (up/down)
+  // swipe support
   let touchY = 0;
   function onTouchStart(e: TouchEvent) { touchY = e.touches[0].clientY; }
   function onTouchEnd(e: TouchEvent) {
@@ -93,17 +77,16 @@
 </script>
 
 <section id="about" class="relative z-10 w-full bg-gray-50 text-black">
-  <div class="pointer-events-none absolute inset-0 parallax" data-active={active}></div>
-
   <div class="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-10 pt-20 md:pt-28">
-    <!-- LEFT: sticky narrative -->
+    <!-- LEFT PANEL -->
     <aside class="relative">
-      <div class="sticky top-24 space-y-6">
+      <div class="lg:sticky lg:top-24 space-y-6">
         <p class="text-sm tracking-widest uppercase text-indigo-600/80">{steps[active].tag}</p>
         <h1 class="text-3xl sm:text-4xl font-medium leading-tight">{steps[active].title}</h1>
         <p class="text-lg text-gray-700/90">{steps[active].body}</p>
 
         <!-- dots + controls -->
+        {#if !isMobile}
         <div class="flex items-center gap-3 pt-2">
           {#each steps as s}
             <button
@@ -115,13 +98,9 @@
               on:click={() => goTo(s.id)}
             />
           {/each}
-
-          <!-- fast-forward -->
           <button class="ml-2 rounded-full border border-gray-200 p-2 hover:bg-gray-50" on:click={() => { next(); restart(); }} aria-label="Next">
             <ChevronsDown class="w-4 h-4" />
           </button>
-
-          <!-- play/pause -->
           <button class="rounded-full border border-gray-200 p-2 hover:bg-gray-50" on:click={toggleAutoplay} aria-label="Toggle autoplay">
             {#if autoplay}
               <Pause class="w-4 h-4" />
@@ -130,6 +109,7 @@
             {/if}
           </button>
         </div>
+        {/if}
 
         <button
           class="mt-4 bg-gray-900 text-white px-6 py-4 rounded-full text-base sm:text-lg font-medium hover:bg-gray-800 active:scale-[0.99] transition"
@@ -141,17 +121,22 @@
       </div>
     </aside>
 
-    <!-- RIGHT: vertical carousel -->
+    <!-- RIGHT PANEL -->
     <div class="relative">
       <div
         id="about-carousel"
-        class="h-[62vh] sm:h-[66vh] md:h-[68vh] lg:h-[70vh] max-h-[720px] overflow-hidden rounded-3xl no-scrollbar backdrop-blur" 
+        class="{isMobile
+          ? 'overflow-visible h-auto space-y-6'
+          : 'overflow-hidden h-[62vh] sm:h-[66vh] md:h-[68vh] lg:h-[70vh] max-h-[720px] rounded-3xl no-scrollbar backdrop-blur'}"
         on:touchstart={onTouchStart}
         on:touchend={onTouchEnd}
       >
-        <div class="track h-full" style={`transform: translateY(-${active * 100}%);`}>
+        <div
+          class="{isMobile ? '' : 'track h-full'}"
+          style="{isMobile ? '' : `transform: translateY(-${active * 100}%);`}"
+        >
           {#each steps as s, i}
-            <section class="min-h-full p-6 md:p-10 flex items-start">
+            <section class="{isMobile ? 'p-4 sm:p-6 md:p-8' : 'h-full p-6 md:p-10 flex items-start'}">
               <div class="w-full">
                 <div class="rounded-2xl border border-gray-200 bg-white/80 backdrop-blur p-6 md:p-8 shadow-sm">
                   <div class="flex items-start gap-4">

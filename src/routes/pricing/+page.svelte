@@ -41,10 +41,10 @@
     <!-- Hero -->
     <section class="text-center">
       <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
-        Simple, transparent <span class="bg-gradient-to-r from-[#4726ff] via-[#7075ff] to-[#4726ff] text-transparent bg-clip-text">pricing</span>
+        Simple, transparent <span class="bg-gradient-to-r from-[#3a2a99] via-[#7075ff] to-[#3a2a99] text-transparent bg-clip-text">pricing</span>
       </h1>
       <p class="mx-auto mt-4 max-w-2xl text-gray-600 text-lg">
-        RPV growth with data-backed A/B testing, trust building layouts, and your own <b>custom</b> analytics dashboard.
+        RPV growth with data-backed A/B testing, trust building layouts, and <b>deep</b> analytics.
         <br /><b>Cancel anytime</b>, <b>no hidden fees</b>, and <b>dedicated account manager</b>.
       </p>
 
@@ -125,7 +125,7 @@
     <!-- Secondary CTA -->
     <section class="mt-16 text-center">
       <p class="text-gray-600">Not sure which fit is best? We’ll recommend one in a 10-minute call.</p>
-      <a href="/contact" class="mt-4 inline-block rounded-full border border-[#1D2939] px-5 py-3 text-[#1D2939] hover:bg-[#1D2939] hover:text-white transition">
+      <a href="/#contact" class="mt-4 inline-block rounded-full border border-[#1D2939] px-5 py-3 text-[#1D2939] hover:bg-[#1D2939] hover:text-white transition">
         Contact Us
       </a>
     </section>
