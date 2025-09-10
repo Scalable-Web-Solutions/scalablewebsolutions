@@ -9,7 +9,7 @@
     id="gradient-text"
     class="text-[75px] font-medium lg:text-[260px] text-center bg-clip-text text-transparent transition-all duration-300"
     style="
-      background-image: radial-gradient(circle at 50% 50%, #3a2a99, #7075ff, #3a2a99);
+      background-image: radial-gradient(circle at 50% 50%, #32155c, #c870ff, #32155c);
       background-size: 200% 200%;
     "
   >
@@ -28,7 +28,7 @@
     const x = (e.clientX / innerWidth) * 100;
     const y = (e.clientY / innerHeight) * 100;
     if (text) {
-      text.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, #3a2a99, #7075ff, #3a2a99)`;
+      text.style.backgroundImage = `radial-gradient(circle at ${x}% ${y}%, #32155c, #c870ff, #32155c)`;
     }
   });
   })

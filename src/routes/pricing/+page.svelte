@@ -10,7 +10,7 @@
     badge: 'Most popular',
     highlight: true,
     description: 'For brands ready to scale & optimize conversions.',
-    prices: { monthly: 5000, annually: null as number | null }, // set to a number to enable toggle
+    prices: { monthly: 10000, annually: null as number | null },
     cta: 'Get Started',
     datacta: 'premium_pkg',
     features: [
@@ -41,7 +41,7 @@
     <!-- Hero -->
     <section class="text-center">
       <h1 class="text-4xl md:text-6xl font-bold tracking-tight">
-        Simple, transparent <span class="bg-gradient-to-r from-[#3a2a99] via-[#7075ff] to-[#3a2a99] text-transparent bg-clip-text">pricing</span>
+        Simple, transparent <span class="bg-gradient-to-r from-[#32155c] via-[#c870ff] to-[#32155c] text-transparent bg-clip-text">pricing</span>
       </h1>
       <p class="mx-auto mt-4 max-w-2xl text-gray-600 text-lg">
         RPV growth with data-backed A/B testing, trust building layouts, and <b>deep</b> analytics.
