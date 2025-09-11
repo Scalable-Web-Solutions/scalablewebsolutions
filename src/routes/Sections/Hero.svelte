@@ -130,7 +130,7 @@
           <!-- the tilting card -->
           <div
             bind:this={tiltCard}
-            class="w-[550px] h-[350px] bg-white rounded-2xl relative border border-gray-200 overflow-hidden
+            class="w-[550px] h-[350px] bg-white/5 rounded-2xl relative border border-gray-200 overflow-hidden
                    shadow-[0_30px_80px_-30px_rgba(0,0,0,0.35)]
                    will-change-transform"
             style="
@@ -139,7 +139,7 @@
             "
           >
             <!-- Top Bar -->
-            <div class="absolute top-0 left-0 w-full h-12 bg-gray-100 border-b border-gray-200 flex items-center px-5"
+            <div class="absolute top-0 left-0 w-full h-12 bg-gray-100/10 border-b border-gray-200 flex items-center px-5"
                  style="transform: translateZ(8px);">
               <div class="flex space-x-2">
                 <div class="size-4 bg-red-500 rounded-full"></div>
