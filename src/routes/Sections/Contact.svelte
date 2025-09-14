@@ -221,85 +221,15 @@ Thanks!`;
     <!-- svelte-ignore a11y_interactive_supports_focus -->
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <div
-      class="absolute inset-0 z-[100] bg-black/40 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6"
+      class="absolute inset-0 z-[100] bg-white/90 backdrop-blur-sm flex items-end sm:items-center justify-center p-0 sm:p-6"
       role="dialog"
       aria-modal="true"
       on:click={backdropClose}
     >
-      <div class="w-full sm:max-w-2xl bg-white rounded-t-2xl sm:rounded-2xl shadow-xl">
-        <div class="flex items-center justify-between p-4 border-b border-gray-200">
-          <div class="flex items-center gap-2">
-            <CalendarDays class="w-5 h-5 text-indigo-600" />
-            <h3 class="text-lg font-semibold">Book a 20-minute consult</h3>
-          </div>
-          <button class="p-2 rounded-lg hover:bg-gray-100" on:click={closeModal} aria-label="Close">
-            <X class="w-5 h-5" />
-          </button>
-        </div>
-
-        <div class="p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <!-- Dates -->
-          <div>
-            <p class="text-sm text-gray-600 mb-2">Select a date</p>
-            <div class="grid grid-cols-3 gap-2">
-              {#each days as d}
-                <button
-                  class="rounded-xl border px-3 py-2 text-left hover:bg-gray-50 transition"
-                  class:border-indigo-300={selectedDate && d.getTime() === selectedDate.getTime()}
-                  class:bg-indigo-50={selectedDate && d.getTime() === selectedDate.getTime()}
-                  on:click={() => { selectedDate = d; }}
-                >
-                  <div class="text-xs text-gray-500">{d.toLocaleDateString(undefined, { weekday: "short" })}</div>
-                  <div class="font-medium">{d.toLocaleDateString(undefined, { month: "short", day: "numeric" })}</div>
-                </button>
-              {/each}
-            </div>
-          </div>
-
-          <!-- Times -->
-          <div>
-            <p class="text-sm text-gray-600 mb-2 flex items-center gap-2">
-              <Clock class="w-4 h-4 text-indigo-600" /> Select a time ({tz})
-            </p>
-            <div class="grid grid-cols-3 gap-2 max-h-56 overflow-y-auto pr-1">
-              {#each times as t}
-                <button
-                  class="rounded-xl border px-3 py-2 text-center hover:bg-gray-50 transition"
-                  class:border-indigo-300={selectedTime === t}
-                  class:bg-indigo-50={selectedTime === t}
-                  on:click={() => { selectedTime = t; }}
-                >
-                  {new Date(0,0,0, +t.split(':')[0], +t.split(':')[1]).toLocaleTimeString(undefined, { hour: 'numeric', minute: '2-digit' })}
-                </button>
-              {/each}
-            </div>
-            <p class="mt-2 text-xs text-gray-500">We’ll confirm or propose the nearest slot if unavailable.</p>
-          </div>
-        </div>
-
-        <div class="flex items-center justify-between gap-3 p-4 sm:p-6 border-t border-gray-200">
-          <div class="text-sm text-gray-600">
-            {#if selectedDate && selectedTime}
-              <span class="font-medium">Selected:</span>
-              {fmtPretty(selectedDate, selectedTime)} ({tz})
-            {:else}
-              Pick a date & time to continue.
-            {/if}
-          </div>
-
-          <div class="flex gap-3">
-            <button class="px-4 py-2 rounded-xl border hover:bg-gray-50" on:click={closeModal}>Cancel</button>
-            <a
-              class="px-5 py-2 rounded-xl bg-indigo-600 text-white font-medium hover:bg-indigo-500 transition disabled:opacity-50 disabled:pointer-events-none"
-              href={mailtoConsult()}
-              on:click={() => (open = false)}
-              aria-disabled={!selectedDate || !selectedTime}
-            >
-              Confirm & Email
-            </a>
-          </div>
-        </div>
-      </div>
+    <button class="absolute top-0 right-0 bg-neutral-900 px-4 py-2 rounded-bl-2xl text-white" on:click={closeModal}>
+      Close
+    </button>
+    <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ397Z41W23PqTONRXOh9M0daImk-unGhYlQqM37Cqj0Gc2pJQA398agJAhf8SWWWo_8fX1GaLKH?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
     </div>
   {/if}
 </section>

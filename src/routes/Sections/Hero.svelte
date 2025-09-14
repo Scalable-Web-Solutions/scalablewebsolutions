@@ -76,7 +76,7 @@
   });
 </script>
 
-<section class="relative z-20 w-full min-h-screen flex items-center md:mt-5 mt-20 pb-5">
+<section class="relative z-20 w-full min-h-screen flex items-center md:mt-5 mt-10 pb-5">
   <div class="mx-auto max-w-7xl px-6">
     <div class="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] items-center gap-12">
       <!-- Left: Copy -->
@@ -113,7 +113,7 @@
       <!-- Right: 3D tilt area -->
       <div
         transition:fly={{ y: 10, duration: 1000, delay: 600 }}
-        class="flex justify-center md:justify-end"
+        class="hidden md:flex md:justify-end"
       >
         <!-- Perspective wrapper (bigger hit area on mobile/desktop) -->
         <div

@@ -30,7 +30,7 @@
   const clamp01 = (n: number) => Math.max(0, Math.min(1, n));
   const pct = (n: number) => `${Math.round(clamp01(n) * 100)}%`;
 </script>
-<section class="w-full text-neutral-900 bg-white rounded-3xl p-6 md:p-10 shadow-xl ring-1 ring-neutral-200">
+<section class="w-full text-neutral-900 bg-white rounded-3xl p-6 md:p-10 shadow-xl ring-1 ring-neutral-200 scale-85 ">
   <!-- Headline -->
   <div class="space-y-3 text-center max-w-3xl mx-auto">
     <p class="text-2xl md:text-3xl/none font-medium text-neutral-700">{title}</p>
@@ -100,9 +100,9 @@
 			</div>
 		</div>
     {/each}
-  
 	</div>
 </section>
+<button class="bg-neutral-900 text-white px-4 py-4 rounded-full w-[50%] mx-auto -mt-7" on:click={() => window.location.href = '#contact'}>Book a Call</button>
 <style>
   /* Respect reduced motion */
   @media (prefers-reduced-motion: reduce) {
