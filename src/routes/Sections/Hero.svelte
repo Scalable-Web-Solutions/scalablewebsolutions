@@ -82,18 +82,17 @@
       <!-- Left: Copy -->
       {#if mounted}
       <div transition:fly={{ y: 40, duration: 800, delay: 200 }}>
-        <h2 class="text-4xl md:text-[45px] font-medium leading-tight">
+        <h2 class="text-4xl md:text-[48px] font-medium leading-tight">
           We
-          <span class="bg-gradient-to-r from-[#32155c] via-[#c870ff] to-[#32155c] text-transparent bg-clip-text font-semibold">leverage</span>
+          <span class="bg-gradient-to-r from-[#32155c] via-[#c870ff] to-[#32155c] text-transparent bg-clip-text font-semibold">transform</span>
           your
-          <span class="bg-gradient-to-r from-[#32155c] via-[#c870ff] to-[#32155c] text-transparent bg-clip-text font-semibold">website</span> 
-          for
-          <span class="bg-gradient-to-r from-[#32155c] via-[#c870ff] to-[#32155c] text-transparent bg-clip-text font-semibold">sustainable</span>
-          <span class="bg-gradient-to-r from-[#32155c] via-[#c870ff] to-[#32155c] text-transparent bg-clip-text font-semibold">growth</span>
-          so you don't have to.
+          <span class="bg-gradient-to-r from-[#32155c] via-[#c870ff] to-[#32155c] text-transparent bg-clip-text font-semibold">store</span> 
+          into a
+          <span class="bg-gradient-to-r from-[#32155c] via-[#c870ff] to-[#32155c] text-transparent bg-clip-text font-semibold">scalable</span>
+          <span class="bg-gradient-to-r from-[#32155c] via-[#c870ff] to-[#32155c] text-transparent bg-clip-text font-semibold">growth engine</span>
         </h2>
         <p class="mt-4 text-gray-700 max-w-xl">
-          Empowering high-growth eCommerce brands to scale with data-driven Revenue Per Visitor optimization — without the hassle of traditional marketing agencies.
+          Turning high-intent traffic into lifetime customers to give Shopify brands the <b>clarity</b>, <b>control</b>, and <b>compounding revenue</b> streams that create <b>category leaders</b>.
         </p>
         <div class="flex gap-2 items-center pt-[10px]">
           <span class="bg-green-500 size-3 rounded-full block animate-pulse"></span>
@@ -116,6 +115,7 @@
         class="hidden md:flex md:justify-end"
       >
         <!-- Perspective wrapper (bigger hit area on mobile/desktop) -->
+        <!-- svelte-ignore a11y_no_static_element_interactions -->
         <div
           bind:this={tiltWrap}
           on:mousemove={onMove}
