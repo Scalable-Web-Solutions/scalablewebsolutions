@@ -45,6 +45,14 @@
                 class="h-8 w-auto grayscale opacity-80 transition hover:grayscale-0 hover:opacity-100" />
             </div>
           </li>
+          <li>
+            <div class="h-14 w-14 sm:h-16 sm:w-16 rounded-xl bg-white shadow-[0_2px_12px_rgba(0,0,0,.06)] ring-1 ring-black/5 grid place-items-center">
+              <img
+                src="https://static.wixstatic.com/media/2293e6_da97e8ea3719441d97b3b47e4b2d7534~mv2.png"
+                alt="Shopify"
+                class="h-10 w-auto" />
+            </div>
+          </li>
         </ul>
       </div>
     </div>

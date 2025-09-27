@@ -79,7 +79,6 @@
 <section class="relative z-20 w-full min-h-screen flex items-center md:mt-5 mt-10 pb-5">
   <div class="mx-auto max-w-7xl px-6">
     <div class="grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] items-center gap-12">
-      <!-- Left: Copy -->
       {#if mounted}
       <div transition:fly={{ y: 40, duration: 800, delay: 200 }}>
         <h2 class="text-4xl md:text-[45px] font-medium leading-tight">
