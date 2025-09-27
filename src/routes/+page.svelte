@@ -24,9 +24,6 @@
   </div>
   <Hero/>
   <PartnerStrip />
-
-
-
   <Info/>
   <Results/>
   <MissingOut/>
