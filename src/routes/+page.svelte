@@ -8,12 +8,15 @@
     import kaytee from '$lib/assets/kaytee.jpg'
     import MissingOut from './Sections/MissingOut.svelte';
     import PartnerStrip from './reusable/PartnerStrip.svelte';
+    import LoadingAnimation from './reusable/LoadingAnimation.svelte';
 
     const { data } = $props<{
       data: { experiments: Record<string, string>; anonId?: string }
     }>();
 
 </script>
+
+<LoadingAnimation/>
 
 <div class="relative min-h-screen w-full">
   <div class="pointer-events-none fixed inset-0 -z-10">
@@ -26,6 +29,6 @@
   <PartnerStrip />
   <Info/>
   <Results/>
-  <MissingOut/>
+  
   <Contact />
 </div>

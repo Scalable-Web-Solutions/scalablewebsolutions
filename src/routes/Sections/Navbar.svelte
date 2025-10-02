@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { goto } from "$app/navigation";
   import { Menu, X } from "lucide-svelte";
   export let logo: string;
 
@@ -8,6 +9,15 @@
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     open = false;
+  }
+
+  function gotoSelectVal(event: any){
+    const sel: string = event.target.value
+    if(sel.toLocaleLowerCase() === "atlas by scalable"){
+      window.location.href = `https://atlas.scalableweb.solutions`;
+    } else {
+      window.location.href = `https://${sel}.scalableweb.solutions`;
+    }
   }
 </script>
 
@@ -24,10 +34,17 @@
       <a href="/#about">About</a>
       <a href="/#results">Results</a>
       <a href="/pricing">Pricing</a>
+      <select on:change={(e) => gotoSelectVal(e)}>
+        <option>
+          Scalable Suite
+        </option>
+        <option>
+          Atlas by Scalable
+        </option>
+      </select>
 
-      <button on:click={() => scrollToId('contact')} data-cta="navbar_contact_us" class="bg-[#1D2939] text-white px-5 py-3 rounded-full">Contact Us</button>
-      <button on:click={() => scrollToId('contact')} data-cta="navbar_request_demo" class="bg-indigo-600 text-white px-5 py-3 rounded-full -ml-2">Book a call</button>
-      <button on:click={() => window.location.href = '/portal'} class="bg-gray-200 text-black px-5 py-3 rounded-full w-full sm:w-auto shadow-sm">Client Portal</button>
+      <button on:click={() => scrollToId('contact')} data-cta="navbar_contact_us" class="bg-[#1D2939] text-white px-5 py-3 rounded-full hover:scale-105 transition-all cursor-pointer">Contact Us</button>
+      <button on:click={() => scrollToId('contact')} data-cta="navbar_request_demo" class="bg-indigo-600 text-white px-5 py-3 rounded-full -ml-2 hover:scale-105 transition-all cursor-pointer">Book a call</button>
     </nav>
 
     <!-- Mobile hamburger -->
@@ -59,7 +76,6 @@
         <div class="flex flex-col sm:flex-row gap-3 pt-2">
           <button class="bg-[#1D2939] text-white px-5 py-3 rounded-full w-full sm:w-auto">Contact Us</button>
           <button class="bg-gray-200 text-black px-5 py-3 rounded-full w-full sm:w-auto sm:-ml-2">Request a Demo</button>
-          <button class="bg-gray-200 text-white px-5 py-3 rounded-full w-full sm:w-auto">Client Portal</button>
         </div>
       </div>
     </div>
