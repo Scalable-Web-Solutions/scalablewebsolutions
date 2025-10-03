@@ -5,11 +5,10 @@
 
   let active = 0;
   const steps = [
-    { t: "Consultation", d: "We align on goals, audience, and current performance. Clear scope, clear KPI.", icon: CalendarCheck2, chips: ["Goals & KPIs","Analytics review","Tech audit","CRO opps"] },
-    { t: "Design", d: "Clear and responsive UX design. Small changes that make a big impact.", icon: PenTool, chips: ["Shopify themes", "Trust building layouts", "Data informed changes"] },
-    { t: "Analytics", d: "Deep dive into your analytics to determine what we have to focus on to improve metrics.", icon: Code2, chips: ["Deep analysis", "Weekly analytics review", "Strategy review"] },
-    { t: "Testing", d: "Perf, UX, analytics QA. Lighthouse 90+ targets and experiment hooks ready.", icon: TestTube2, chips: ["A/B testing","User testing","Heatmaps"] },
-    { t: "Launch & Iterate", d: "Deploy, monitor, and iterate with an A/B backlog focused on conversion wins.", icon: Rocket, chips: ["Check-ins","Dedicated account manager","Rollouts"] }
+    { t: "Research", d: "From the micro details shaping your industry, we listen, learn, and dig deep to uncover the insights that truly matter to your growth.", icon: CalendarCheck2, chips: ["Goals & KPIs","Market Dynamics","Customer Behaviors","CRO Integartions"] },
+    { t: "Test", d: "With the right foundation in place, we design controlled site tests backed by data to reveal exactly what drives growth.", icon: PenTool, chips: ["Hypothesis Design", "Experiment Architecture", "Analytics & Tracking setup", "Guardrail Definition"] },
+    { t: "Prove", d: "Once results are validated, we roll out proven wins with confidence. Every implementation is rooted in the data, ensuring that what goes live creates a positive measureable impact.", icon: Code2, chips: ["A/B Testing", "Clean Result Attributions", "Guardrails Against Risk", "Data-Driven Growth"] },
+    { t: "Refine & Repeat", d: "Growth is a cycle. We feed every proven win back into updated buyer profiles, sharper marketing strategies, and more tailored customer journeys that keep customers coming back.", icon: TestTube2, chips: ["Buyer Persona Refinement","GTM Refinement","Strategy Scaling", "Compounding Growth"] },
   ];
 
   // persist until reload
@@ -25,7 +24,7 @@
             if (!seen[idx]) seen[idx] = true;
 
             // when last step is reached, unlock all (once)
-            if (idx === steps.length - 1 && !allUnlocked) {
+            if (idx === steps.length - 3 && !allUnlocked) {
               // small delay so it feels intentional
               setTimeout(() => { allUnlocked = true; }, 120);
             }
@@ -102,7 +101,7 @@ onDestroy(() => {
     <!-- Sticky left progress bar -->
     <div class="hidden lg:block absolute -left-8 top-0 h-full">
       <div class="sticky top-24 w-1 rounded-full bg-indigo-200/60 overflow-hidden"
-        style="height: calc(100vh + 6rem);">
+        style="height: calc(100vh - 2.5rem);">
         <div class="w-full bg-indigo-600 origin-top"
          style={`height:${(progress * 100).toFixed(2)}%`}></div>
       </div>
@@ -110,7 +109,7 @@ onDestroy(() => {
 
       <div class="pointer-events-none hidden lg:block absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-indigo-200/0 via-indigo-200 to-indigo-200/0"></div>
 
-      <ol class="space-y-10 lg:space-y-14">
+      <ol class="space-y-10 lg:space-y-10">
         {#each steps as s, i}
           <li class="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start" use:observe={i}>
             <!-- timeline dot -->
@@ -153,7 +152,7 @@ onDestroy(() => {
                   </div>
                   <h3 class="text-xl md:text-2xl font-semibold">{s.t}</h3>
                 </div>
-                <p class="mt-2 text-gray-700 leading-relaxed max-w-prose">{s.d}</p>
+                <p class="mt-2 text-sm text-gray-700 leading-relaxed max-w-prose">{s.d}</p>
               </article>
             </div>
           </li>
