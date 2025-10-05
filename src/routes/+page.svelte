@@ -9,6 +9,7 @@
     import MissingOut from './Sections/MissingOut.svelte';
     import PartnerStrip from './reusable/PartnerStrip.svelte';
     import LoadingAnimation from './reusable/LoadingAnimation.svelte';
+    import ProcessSJ from './Sections/ProcessSJ.svelte';
 
     const { data } = $props<{
       data: { experiments: Record<string, string>; anonId?: string }
@@ -28,7 +29,7 @@
   <Hero/>
   <PartnerStrip />
   <Info/>
-  <Results/>
+  <ProcessSJ/>
   
   <Contact />
 </div>
